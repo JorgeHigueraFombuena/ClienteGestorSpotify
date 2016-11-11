@@ -64,8 +64,8 @@ public class ViewArtist extends Activity {
                 ContentResolver cr = getContentResolver();
                 ContentValues c = new ContentValues();
                 c.put(Album.COL_NAME_RATING, value);
-                int a = cr.update(MainActivity.uriArtistas, c, Artist.COL_NAME_ID + "=?", new String[]{String.valueOf(artist.getId())});
-                Log.i(MainActivity.TAG, a + "");
+                cr.update(MainActivity.uriArtistas, c, Artist.COL_NAME_ID + "=?", new String[]{String.valueOf(artist.getId())});
+                //Log.i(MainActivity.TAG, a + "");
             }
         });
 

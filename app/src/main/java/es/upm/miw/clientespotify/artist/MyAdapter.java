@@ -67,8 +67,8 @@ public class MyAdapter extends ArrayAdapter<Album> {
                 ContentResolver cr = context.getContentResolver();
                 ContentValues c = new ContentValues();
                 c.put(Album.COL_NAME_RATING, value);
-                int a = cr.update(ViewArtist.uriAlbums, c, Album.COL_NAME_ID + "=?", new String[]{String.valueOf(album.getId())});
-                Log.i(MainActivity.TAG, a + "");
+                cr.update(ViewArtist.uriAlbums, c, Album.COL_NAME_ID + "=?", new String[]{String.valueOf(album.getId())});
+                //Log.i(MainActivity.TAG, a + "");
             }
         });
 

@@ -31,6 +31,8 @@ public class MainActivity extends Activity {
 
     private ArrayList<Artist> cachedList;
 
+    private boolean firstTime = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,7 +83,14 @@ public class MainActivity extends Activity {
                 cachedList
         );
         listView.setAdapter(myAdapter);
+        firstTime=false;
+    }
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(!firstTime) {
+            buscar(null);
+        }
     }
 }
